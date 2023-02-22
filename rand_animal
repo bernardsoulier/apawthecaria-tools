@@ -1,0 +1,15 @@
+#w:: ; random animal script - press win-w to get a random animal with personality - from Apawthecaria tables
+   descriptor:=["Aquatic", "Melodic", "Burrowing", "Playful", "Befurred", "Bescaled", "Clawed", "Sun-loving", "Star-dancing", "Mud-dwelling", "Unnoticed", "Majestic"]
+   Random, d_index, 1, descriptor.MaxIndex()
+   animal_type := descriptor[d_index]
+
+   MyArray := [["Beavers","Dippers","Newts","Frogs"],["Finches","Tits","Swallows","Jays"],["Badgers","Hares","Hedgehogs","Moles"],["Crows","Skylarks","Swifts","Otters"],["Squirrels","Shrews","Dormice"],["Slow Worms","Adders"],["Forest Cats","Kestrels","Weasels"], ["Stoats","Lizards","Seagulls","Doves"],["Bats","Foxes","Rats","Nightjars"],["Corncrakes","Toads","Newts"],["Dunnocks","Little Owls","Voles"],["Capercaillie","Pine Martens"]]
+   Random, animal_index, 1, MyArray[d_index].MaxIndex()
+   animal := MyArray[d_index][animal_index]
+
+   personalityAr := [["Witty","Passionate","Snide"],["Soft","Stoic","Cruel"],["Furious","Oblivious","Scared"],["Joyous","Depressed","Evasive"],["Immaterial","Dreamy","Distracted"],["Suspicious","Curious","Secretive"],["Loud","Disgusting","Brash"],["Radiant","Generous","Energetic"],["Cool","Calm","Collected"],["Whelmed","Draining","Killjoy"],["Anxious","Skittish","Jubilant"],["Distant","Righteous","Rebellious"]]
+   Random, personality_index, 1, personalityAr[d_index].MaxIndex()
+   personality := personalityAr[d_index][personality_index]
+
+   Send, A %personality% %animal_type% : %animal%
+Return
